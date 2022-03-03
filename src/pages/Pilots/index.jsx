@@ -26,9 +26,9 @@ export default function Pilots() {
     }, [page]);
 
 
-    function handlePerson(pilotname, event) {
-        event.preventDefault();
-        console.log(pilotname);
+    function handlePerson(pilot, event) {
+        let person = pilot
+        localStorage.setItem('person', JSON.stringify(person));
     }      
         //programação declarativa para imprimir os itens do array se existir itens nele.
     return(
@@ -41,7 +41,7 @@ export default function Pilots() {
             <S.containerPilots>
                 { pilots.map(pilot => {
                     return (
-                        <S.linkPilots to='/Pilot-Info' key={pilot.name} onClick={(event) => handlePerson(pilot.name, event)}>
+                        <S.linkPilots to='/Pilot-Info' key={pilot.name} onClick={(event) => handlePerson(pilot, event)}>
                             { pilot.name }
                         </S.linkPilots>
                     )

@@ -3,8 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Pilots from "./pages/Pilots";
 import Starships from "./pages/Starships";
-import pilotInfo from "./pages/PilotInfo";
-import starshipInfo from "./pages/StarshipInfo";
+import PilotInfo from "./pages/PilotInfo";
+import StarshipInfo from "./pages/StarshipInfo";
 
 export default function Routes() {
     return (
@@ -12,9 +12,9 @@ export default function Routes() {
             <Switch>
                 <Route path='/' exact component={Home} />
                 <Route path='/Pilots' component={Pilots}/>
-                <Route path='/Pilot-info' component={pilotInfo} />
+                <Route path='/Pilot-info' component={PilotInfo} />
                 <Route path='/Starships' component={Starships} />
-                <Route path='/Starship-info' component={starshipInfo} />
+                <Route path='/Starship-Info' component={StarshipInfo} />
             </Switch>
         </BrowserRouter>
     );

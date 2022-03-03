@@ -20,6 +20,10 @@ export default function Starships() {
                 setStarship((response.data.results))
             })
     }, [page]);
+    function handleStarship(starship, event) {
+        let starshipPick = starship
+        localStorage.setItem('starshipPick', JSON.stringify(starshipPick));
+    }
         //programação declarativa para imprimir os itens do array se existir itens nele.    
     return(
         <>
@@ -31,7 +35,7 @@ export default function Starships() {
            <S.containerStarships> 
                { starship.map(starship => {
                    return (
-                    <S.linkStarships to='/Starship-Info'key={starship.name}>
+                    <S.linkStarships to='/Starship-Info'key={starship.name} onClick={(event) => handleStarship(starship, event)}>
                         { starship.name }
                     </S.linkStarships>
                    )
